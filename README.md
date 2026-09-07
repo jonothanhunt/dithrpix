@@ -12,7 +12,8 @@
 
 <p align="center">
   <strong>A four-shade greyscale dither camera.</strong><br/>
-  Built with the <a href="https://shop.pimoroni.com/products/badger-2350">Pimoroni Badger 2350</a> and a PTC06 TTL serial JPEG camera connected to the Qw/ST port, powered by Pimoroni's <a href="https://badgewa.re/docs">Badgeware API</a>.
+  Built with the <a href="https://shop.pimoroni.com/products/badger-2350">Pimoroni Badger 2350</a> and a PTC06 TTL serial JPEG camera connected to the Qw/ST port, powered by Pimoroni's <a href="https://badgewa.re/docs">Badgeware API</a>.<br/><br/>
+  📖 <strong><a href="https://jonothan.dev/blog/dithrpix">Read the story behind the build on my blog</a></strong>
 </p>
 
 <div align="center" style="line-height: 0;">
