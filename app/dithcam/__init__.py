@@ -6,6 +6,7 @@
 import sys
 import os
 import time
+import gc
 import json
 
 sys.path.insert(0, "/system/apps/dithcam")
@@ -639,6 +640,7 @@ def splash():
 def live():
     try:
         show(grab())
+        gc.collect()
     except CameraError as e:
         show(None, note=str(e)[:40])
 
@@ -742,19 +744,18 @@ def update():
             capture()
         elif down:
             live()                         # DOWN refreshes the view
-        elif time.ticks_diff(time.ticks_ms(), last_draw) >= PREVIEW_MS:
-            # Handles background RTC events, active only if the clock is configured.
-            live()
 
     if not ready:
         # Initial UI render post-wake. Prevents unnecessary camera initialization
         # if the device wakes directly into gallery mode.
         ready = True
-        show_current()
+        if not (a or b or c or up or down):
+            show_current()
 
     # Performs necessary state persistence and hardware shutdown procedures
     # before transitioning to deep sleep. The RP2350 RTC does not tick
     # while sleeping on this device, meaning execution is entirely event-driven.
+    gc.collect()
     remember()
     wait_for_button_or_alarm(timeout=IDLE_MS)
 
