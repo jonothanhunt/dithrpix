@@ -1,0 +1,20 @@
+__pycache__/
+*.pyc
+*.mpy
+# pulled from the badge, not source
+photos/
+*.jpg
+
+# AI guidance files
+CLAUDE.md
+.claude.md
+.ai/
+.gemini/
+
+# Old documentation
+docs/
+WORKFLOW.md
+FINDINGS.md
+BADGEWARE.md
+HARDWARE.md
+IMAGING.md
